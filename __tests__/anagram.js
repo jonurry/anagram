@@ -21,12 +21,12 @@ describe('anagram', () => {
   });
 
   describe('#getAnagrams', () => {
-    test('it should return anagrams of the word (same case)', () => {
+    test('it should return anagrams of the subject (same case)', () => {
       anagram = new Anagram('Silent', dictionary);
       expect(anagram.getAnagrams()).toEqual(['Listen']);
     });
 
-    test('it should return anagrams of the word (different case)', () => {
+    test('it should return anagrams of the subject (different case)', () => {
       anagram = new Anagram('lIsTeN', dictionary.concat(['Tinsel', 'Enlist']));
       expect(anagram.getAnagrams()).toEqual(['Silent', 'Tinsel', 'Enlist']);
     });
