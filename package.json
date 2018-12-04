@@ -5,7 +5,7 @@
   "main": "anagram.js",
   "scripts": {
     "build": "npx babel src --out-dir lib",
-    "test": "npx jest --coverage --watch"
+    "test": "npx jest --coverage --verbose --watch"
   },
   "repository": {
     "type": "git",

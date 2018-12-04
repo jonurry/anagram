@@ -21,6 +21,7 @@ export default class Anagram {
     this.word = word;
     this.dictionary = dictionary;
   }
+
   getAnagrams() {
     const alphaWord = sortWordAlphabetically(this.word);
     return filterMatchingAnagrams(this.word, alphaWord, this.dictionary);
