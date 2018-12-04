@@ -2,17 +2,17 @@ import Anagram from '../src/anagram.js';
 
 describe('anagram', () => {
   let anagram;
-  let word;
+  let subject;
   let dictionary = ['Silent', 'Banana', 'Listen'];
 
   describe('#constructor', () => {
     beforeEach(() => {
-      word = 'Silent';
-      anagram = new Anagram(word, dictionary);
+      subject = 'Silent';
+      anagram = new Anagram(subject, dictionary);
     });
 
     test('first parameter should be a word', () => {
-      expect(anagram.word).toEqual(word);
+      expect(anagram.subject).toEqual(subject);
     });
 
     test('second parameter should be an array of words (dictionary)', () => {
