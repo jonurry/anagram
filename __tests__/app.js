@@ -20,7 +20,7 @@ describe('Command Line Interface (CLI)', () => {
       }).toThrowError('expecting 2 arguments, was given 3');
     });
   });
-  describe('check arguments', () => {
+  describe('#constructor', () => {
     test('first argument should be a word', () => {
       expect(() => {
         new CLI(['', '']);

@@ -11,7 +11,7 @@ export default class Dictionary {
       .split('\n');
   }
 
-  getDictionary() {
+  getWords() {
     return this.dictionary;
   }
 }
