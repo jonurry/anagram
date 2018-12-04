@@ -2,14 +2,15 @@ import Anagram from '../src/anagram.js';
 
 describe('anagram', () => {
   let anagram;
-  let word = 'SiLeNt';
+  let word;
   let dictionary = ['Silent', 'Banana', 'Listen'];
 
-  beforeEach(() => {
-    anagram = new Anagram(word, dictionary);
-  });
+  describe('#constructor', () => {
+    beforeEach(() => {
+      word = 'Silent';
+      anagram = new Anagram(word, dictionary);
+    });
 
-  describe('#constructor - should take two arguments', () => {
     test('first parameter should be a word', () => {
       expect(anagram.word).toEqual(word);
     });
@@ -19,9 +20,20 @@ describe('anagram', () => {
     });
   });
 
-  describe('#getAnagrams - it should return anagrams of the word', () => {
-    test('it should return anagrams of the word', () => {
+  describe('#getAnagrams', () => {
+    test('it should return anagrams of the word (same case)', () => {
+      anagram = new Anagram('Silent', dictionary);
       expect(anagram.getAnagrams()).toEqual(['Listen']);
+    });
+
+    test('it should return anagrams of the word (different case)', () => {
+      anagram = new Anagram('lIsTeN', dictionary.concat(['Tinsel', 'Enlist']));
+      expect(anagram.getAnagrams()).toEqual(['Silent', 'Tinsel', 'Enlist']);
+    });
+
+    test('it should return an empty array when no anagrams are found', () => {
+      anagram = new Anagram('Global', dictionary);
+      expect(anagram.getAnagrams()).toEqual([]);
     });
   });
 });
