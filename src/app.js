@@ -1,4 +1,5 @@
-//import Anagram from './anagram.js';
+import Anagram from './anagram.js';
+import Dictionary from './dictionary.js';
 
 const args = process.argv.slice(2);
 
@@ -19,6 +20,22 @@ const checkArguments = args => {
 export default class CLI {
   constructor(args = []) {
     checkArguments(args);
+
+    this.subject = args[0];
+    this.fileName = args[1];
+
+    const dictionary = new Dictionary(this.fileName);
+    const anagramFinder = new Anagram(this.subject, dictionary.getWords());
+    const anagrams = anagramFinder.getAnagrams();
+
+    console.log('');
+    console.log(`The anagrams of ${this.subject} are:`);
+    if (anagrams.length > 0) {
+      console.log(anagramFinder.getAnagrams().join('\n'));
+    } else {
+      console.log('none :(');
+    }
+    console.log('');
   }
 }
 

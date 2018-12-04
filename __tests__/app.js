@@ -1,4 +1,5 @@
 import CLI from '../src/app.js';
+import path from 'path';
 
 describe('Command Line Interface (CLI)', () => {
   describe('it should require 2 arguments', () => {
@@ -20,6 +21,7 @@ describe('Command Line Interface (CLI)', () => {
       }).toThrowError('expecting 2 arguments, was given 3');
     });
   });
+
   describe('#constructor', () => {
     test('first argument should be a word', () => {
       expect(() => {
@@ -31,6 +33,13 @@ describe('Command Line Interface (CLI)', () => {
       expect(() => {
         new CLI(['word', '']);
       }).toThrowError('second argument must be a file name');
+    });
+
+    test('correct arguments', () => {
+      const fileName = path.join(__dirname, '..', 'dictionaries', 'sample.txt');
+      expect(() => {
+        new CLI(['silent', fileName]);
+      }).not.toThrowError();
     });
   });
 });
