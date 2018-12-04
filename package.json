@@ -4,6 +4,7 @@
   "description": "Given a word, what other words are an anagram of that word?",
   "main": "anagram.js",
   "scripts": {
+    "build": "npx babel src --out-dir lib",
     "test": "npx jest --coverage --watch"
   },
   "repository": {
@@ -21,10 +22,12 @@
   },
   "homepage": "https://github.com/jonurry/anagram#readme",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-jest": "^23.6.0",
-    "babel-preset-env": "^1.7.0",
-    "jest": "^23.6.0",
-    "regenerator-runtime": "^0.13.1"
-  }
+    "@babel/core": "*",
+    "@babel/cli": "*",
+    "@babel/preset-env": "*",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "*",
+    "jest": "*"
+  },
+  "dependencies": {}
 }
