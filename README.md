@@ -25,7 +25,7 @@ The output should be the list of words that are anagrams of the subject
 
 ## Approach
 
-I followed a test driven development (TDD) approach to this challenge using the red, green, refactor approach. I chose to implement the code using `node.js`. I wrote the code using ES6 syntax including ES modules and classes. This meant that the code had to be transpiled using `Babel` so that node could run it from the command line.
+I followed a test-driven development (TDD) approach to this challenge using the red, green, refactor approach. I chose to implement the code using `node.js`. I wrote the code using ES6 syntax including ES modules and classes. This meant that the code had to be transpiled using `Babel` so that node could run it from the command line.
 
 The testing framework that I chose is `Jest`. It's really powerful and I enjoy using it. Tests are run in watch mode with coverage reports generated. Current coverage across all files is 95%.
 
@@ -59,7 +59,7 @@ To test the application:
 
 ## To Use Application
 
-The application takes two comand line arguments, the subject (word) for which anagrams need to be found, and the path of a dictionary file:
+The application takes two command line arguments, the subject (word) for which anagrams need to be found, and the path of a dictionary file:
 
 `node path/to/app subject dictionary`
 
